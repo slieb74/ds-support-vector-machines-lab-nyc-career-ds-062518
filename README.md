@@ -62,10 +62,10 @@ In the cell below:
 
 
 ```python
-from sklearn # Finish this import statement
+# from sklearn .... # uncomment and finish this import statement
 
 clf = None
-clf.fit(None, None)
+# clf.fit(None, None)
 ```
 
 Let's save the first feature (on the horizontal axis) as X1 and the second feature (on the vertical axis) as X2.
@@ -122,33 +122,33 @@ Let's now get the coordinates of the decision function. Run the cells below.
 
 
 ```python
-df = clf.decision_function(x1x2).reshape(X1_C.shape)
+# df = clf.decision_function(x1x2).reshape(X1_C.shape)
 ```
 
 
 ```python
-plt.scatter(X1, X2, c = y)
-axes = plt.gca()
-axes.contour(X1_C, X2_C, df, colors= "black", levels= [-1, 0, 1], linestyles=[':', '-', ':'])
-plt.show()
+# plt.scatter(X1, X2, c = y)
+# axes = plt.gca()
+# axes.contour(X1_C, X2_C, df, colors= "black", levels= [-1, 0, 1], linestyles=[':', '-', ':'])
+# plt.show()
 ```
 
 The coordinates of the support vectors can be found in the `support_vectors_` attribute:
 
 
 ```python
-clf.support_vectors_
+# clf.support_vectors_
 ```
 
 Run the cell below to create your plot again, but with highlighted support vectors.
 
 
 ```python
-plt.scatter(X1, X2, c = y)
-axes = plt.gca()
-axes.contour(X1_C, X2_C, df, colors= "black", levels= [-1, 0, 1], linestyles=[':', '-', ':'])
-axes.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1], facecolors='blue') 
-plt.show()
+# plt.scatter(X1, X2, c = y)
+# axes = plt.gca()
+# axes.contour(X1_C, X2_C, df, colors= "black", levels= [-1, 0, 1], linestyles=[':', '-', ':'])
+# axes.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1], facecolors='blue') 
+# plt.show()
 ```
 
 ### 2.2 Soft margin tuning
@@ -172,7 +172,7 @@ plt.scatter(X[:, 0], X[:, 1], c=y, s=25)
 from sklearn import svm
 
 clf = None
-clf.fit(None, None)
+# clf.fit(None, None)
 
 X1= None
 X2= None
@@ -182,16 +182,17 @@ X2_min, X2_max = None, None
 x1_coord = None
 x2_coord = None
 
-X2_C, X1_C = None
+X2_C = None
+X1_C = None
 
 x1x2 = None
 
-df = clf.decision_function(x1x2).reshape(X1_C.shape)
+# df = clf.decision_function(x1x2).reshape(X1_C.shape)
 
-plt.scatter(X1, X2, c = y)
-axes = plt.gca()
-axes.contour(X1_C, X2_C, df, colors= "black", levels= [-1, 0, 1], linestyles=[':', '-', ':'])
-plt.show()
+# plt.scatter(X1, X2, c = y)
+# axes = plt.gca()
+# axes.contour(X1_C, X2_C, df, colors= "black", levels= [-1, 0, 1], linestyles=[':', '-', ':'])
+# plt.show()
 ```
 
 As you can see, 3 instances are misclassified (1 yellow, 2 purple). The reason for this is that in scikit learn, the svm module automatically allows for slack variables. If we want to make sure we have as few misclassifications as possible, we should set a bigger value for C, the regularization parameter.
@@ -248,7 +249,7 @@ Now, we'll repeat the same process as we did above.  In the cell below:
 
 ```python
 clf = None
-clf.fit(None, None)
+# clf.fit(None, None)
 ```
 
 Now, run the cell below to plot the decision boundaries for our multiclass dataset.  
@@ -267,13 +268,13 @@ X2_C, X1_C = np.meshgrid(x2_coord, x1_coord)
 
 x1x2 = np.c_[X1_C.ravel(), X2_C.ravel()]
 
-Z = clf.predict(x1x2).reshape(X1_C.shape)
+# Z = clf.predict(x1x2).reshape(X1_C.shape)
 
-axes = plt.gca()
-axes.contourf(X1_C, X2_C, Z, alpha = 1)
-plt.scatter(X1, X2, c = y, edgecolors = 'k')
-axes.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1], facecolors='blue', edgecolors= 'k') 
-plt.show()
+# axes = plt.gca()
+# axes.contourf(X1_C, X2_C, Z, alpha = 1)
+# plt.scatter(X1, X2, c = y, edgecolors = 'k')
+# axes.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1], facecolors='blue', edgecolors= 'k') 
+# plt.show()
 ```
 
 ## 4. The kernel trick
