@@ -43,7 +43,7 @@ plt.show()
 ```
 
 
-![png](output_4_0.png)
+![png](index_files/index_4_0.png)
 
 
 ## 2. Two groups 
@@ -61,12 +61,12 @@ plt.scatter(X[:, 0], X[:, 1], c = y, s=25)
 
 
 
-    <matplotlib.collections.PathCollection at 0x1f602aff9b0>
+    <matplotlib.collections.PathCollection at 0x1a1b878c88>
 
 
 
 
-![png](output_8_1.png)
+![png](index_files/index_8_1.png)
 
 
 In the cell below:
@@ -118,7 +118,7 @@ print(X1_max)
 ```
 
     7.321748977894958
-    
+
 
 Next, we'll create a grid. You can do this by using the numpy function `linspace`, which creates a numpy array with evenly spaced numbers over a specified interval. The default of numbers is 50 and we don't need that many, so let's specify `num = 10` for now. You'll see that you need to up this number one we get to the classification of more than 2 groups.
 
@@ -162,7 +162,7 @@ plt.show()
 ```
 
 
-![png](output_24_0.png)
+![png](index_files/index_24_0.png)
 
 
 The coordinates of the support vectors can be found in the `support_vectors_`-attribute:
@@ -192,7 +192,7 @@ plt.show()
 ```
 
 
-![png](output_28_0.png)
+![png](index_files/index_28_0.png)
 
 
 ### 2.2 Soft margin tuning
@@ -211,12 +211,12 @@ plt.scatter(X[:, 0], X[:, 1], c=y, s=25)
 
 
 
-    <matplotlib.collections.PathCollection at 0x1f602d5fb00>
+    <matplotlib.collections.PathCollection at 0x1a1bee73c8>
 
 
 
 
-![png](output_31_1.png)
+![png](index_files/index_31_1.png)
 
 
 In the cell below, repeat the entire process from above.  We're doing the exact same thing as we did above, but to a different dataset--feel free to copy and paste the code you wrote above.
@@ -251,7 +251,7 @@ plt.show()
 ```
 
 
-![png](output_33_0.png)
+![png](index_files/index_33_0.png)
 
 
 As you can see, 3 instances are misclassified (1 yellow, 2 purple). The reason for this is that in scikit learn, the svm module automatically allows for slack variables. If we want to make sure we have as few misclassifications as possible, we should set a bigger value for C, the regularization parameter.
@@ -290,7 +290,7 @@ plt.show()
 ```
 
 
-![png](output_35_0.png)
+![png](index_files/index_35_0.png)
 
 
 ## 3. More than 2 groups
@@ -308,12 +308,12 @@ plt.scatter(X[:, 0], X[:, 1], c=y, s=25)
 
 
 
-    <matplotlib.collections.PathCollection at 0x1f602705160>
+    <matplotlib.collections.PathCollection at 0x1a1c01d940>
 
 
 
 
-![png](output_37_1.png)
+![png](index_files/index_37_1.png)
 
 
 Now, we'll repeat the same process as we did above.  In the cell below:
@@ -362,7 +362,7 @@ plt.show()
 ```
 
 
-![png](output_41_0.png)
+![png](index_files/index_41_0.png)
 
 
 ## 4. The kernel trick
@@ -400,7 +400,7 @@ plt.show()
 ```
 
 
-![png](output_44_0.png)
+![png](index_files/index_44_0.png)
 
 
 Let's see one more example of using the kernel trick to find non-linear decision boundaries.  Run the cell below to create another sample dataset, fit an SVM using a non-linear kernel, and plot the decision boundaries.  
@@ -436,7 +436,7 @@ plt.show()
 ```
 
 
-![png](output_46_0.png)
+![png](index_files/index_46_0.png)
 
 
 # Sources
